@@ -21,6 +21,7 @@ function ajaxSearch() {
         url: mkPlayer.api, 
         data: "types=search&count=" + mkPlayer.loadcount + "&source=" + rem.source + "&pages=" + rem.loadPage + "&name=" + rem.wd,
         dataType : "jsonp",
+		headers: {'message': 'Thanks for your API!' },
         complete: function(XMLHttpRequest, textStatus) {
             if(tmpLoading) layer.close(tmpLoading);    // 关闭加载中动画
         },  // complete
@@ -114,6 +115,7 @@ function ajaxUrl(music, callback)
         url: mkPlayer.api,
         data: "types=url&id=" + music.id + "&source=" + music.source,
         dataType : "jsonp",
+		headers: {'message': 'Thanks for your API!' },
         success: function(jsonData){
             // 调试信息输出
             if(mkPlayer.debug) {
@@ -173,6 +175,7 @@ function ajaxPic(music, callback)
         url: mkPlayer.api,
         data: "types=pic&id=" + music.pic_id + "&source=" + music.source,
         dataType : "jsonp",
+		headers: {'message': 'Thanks for your API!' },
         success: function(jsonData){
             // 调试信息输出
             if(mkPlayer.debug) {
@@ -214,6 +217,7 @@ function ajaxPlayList(lid, id, callback) {
         type: mkPlayer.method, 
         url: mkPlayer.api, 
         data: "types=playlist&id=" + lid,
+		headers: {'message': 'Thanks for your API!' },
         dataType : "jsonp",
         complete: function(XMLHttpRequest, textStatus) {
             musicList[id].isloading = false;    // 列表已经加载完了
@@ -306,6 +310,7 @@ function ajaxLyric(music, callback) {
         url: mkPlayer.api,
         data: "types=lyric&id=" + music.lyric_id + "&source=" + music.source,
         dataType : "jsonp",
+		headers: {'message': 'Thanks for your API!' },
         success: function(jsonData){
             // 调试信息输出
             if (mkPlayer.debug) {
@@ -337,6 +342,7 @@ function ajaxUserList(uid)
         url: mkPlayer.api,
         data: "types=userlist&uid=" + uid,
         dataType : "jsonp",
+		headers: {'message': 'Thanks for your API!' },
         complete: function(XMLHttpRequest, textStatus) {
             if(tmpLoading) layer.close(tmpLoading);    // 关闭加载中动画
         },  // complete
