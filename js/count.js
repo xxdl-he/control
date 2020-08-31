@@ -4,7 +4,7 @@ function countdown(){
     var today=new Date();
     //当前距离1970年的毫秒数
     var oldTime = today.getTime();
-    var newDate = new Date(2023,5,6,9,00,0); 
+    var newDate = new Date(2023,5,7,9,00,0); 
     //月数-1
     var newTime = newDate.getTime();
     
@@ -24,9 +24,9 @@ function countdown(){
         + formatType(minute) + '<span class="time">Mins</span>'
         + formatType(second) + '<span class="time">s</span>';
 	    if(remainSecond >0){
-	    	document.getElementById("zkdjs").innerHTML=("<font color=#426783>"+str+"</font>");
+	    	document.getElementById("GKcountdown").innerHTML=("<font color=#426783>"+str+"</font>");
 	    }else{
-	    	//设置你的事件或者函数
+	    	document.getElementById("GKcountdown").innerHTML=("高 考 开 始");
 	    }
    		//500的目的是防止漏掉执行
 	    setTimeout(countdown,500);
