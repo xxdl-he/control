@@ -7,17 +7,26 @@ import time
 import sys
 
 
-name = g.enterbox(msg="输入昵称【不输入默认匿名】", title="sk")
+user_info = []
+user_info = g.multpasswordbox('请完成启动配置','SK',("昵称【空即匿名】","显示消息数"))
+name = user_info[0]
+mu=user_info[1]
+if mu:
+    mu=int(mu)
+else:
+    mu=5
+mut=str(mu)
 if name:
     pass
 else:
-    name='匿名'
+    name = '匿名'
 a = '8bb1b96e9754c1facde5a8901bfe4524'
 
 
 def ref(full):
-    
-    req = requests.get(('https://gitee.com/api/v5/repos/xxdlyzbb/xxdlyzbb/contents/chat.json?access_token=' + a))
+
+    req = requests.get(
+        ('https://gitee.com/api/v5/repos/xxdlyzbb/xxdlyzbb/contents/chat.json?access_token=' + a))
     b = req.json()
     print(b)
     sha = b['sha']
@@ -25,15 +34,22 @@ def ref(full):
     lk = ((requests.get(u)).text)
     ls = lk.split('丨')
     if full:
-        pass
+        if (len(ls) >= mu):
+            title = ('【'+name+'】最新'+mut+'条')
+            ls = ls[::-1]
+            ls = ls[0:mu]
+            ls = ls[::-1]
+        else:
+            title = ('【'+name+'】顺序全部')
     else:
         ls = ls[::-1]
-        ls = ls[0:3]
+        ls = ls[0:mu]
+        ls = ls[::-1]
+        title = ('【'+name+'】最新'+mut+'条')
     t = "\n".join(ls)
-    
-    k = g.textbox(msg=t, title='Chat1.0[Cancel刷新/OK发送/输入t按下OK退出]')
+    k = g.textbox(msg=t, title='Chat1.0[C刷新/O发送/关命令行退出]→'+title)
     if k:
-        if (k is't'):
+        if (k is 't'):
             sys.exit()
         t0 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         meg = (name + '(' + t0 + '):' + k)
@@ -41,10 +57,12 @@ def ref(full):
         meg = base64.b64encode(up.encode("utf-8"))
         io = (str(meg, 'utf8'))
         urlp = 'https://gitee.com/api/v5/repos/xxdlyzbb/xxdlyzbb/contents/chat.json'
-        p = {'access_token': a, 'content': io, 'sha': sha,'message': ((((name + '(') + t0) + '):') + k)}
-        hh=(requests.put(urlp, json=p).json())
-        ref()
+        p = {'access_token': a, 'content': io, 'sha': sha,
+             'message': ((((name + '(') + t0) + '):') + k)}
+        hh = (requests.put(urlp, json=p).json())
+        ref(False)
     else:
         ref(False)
+
 
 ref(True)
