@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Colin-iframe Test</title>
@@ -56,7 +56,7 @@ function back() {
     </iframe>
 <script>
 function host() {
-        u=parent.document.getElementById("web").contentWindow.location.href;
+        u=document.getElementById("web").contentWindow.location.href;
         document.getElementById("inputText").value=u
     }
 setInterval("host()",500)
