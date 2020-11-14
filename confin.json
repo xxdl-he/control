@@ -1,0 +1,1 @@
+{ "关机": "shutdown -s -t 30 -c \"远控系统丨将在三十秒后关机\"" ,"录屏":["nircmdc sendkeypress ctrl+j"]}
