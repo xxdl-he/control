@@ -1,1 +1,1 @@
-{ "关机": ["shutdown -s -t 30 -c \"远控系统丨将在三十秒后关机\""] ,"录屏":["nircmdc sendkeypress ctrl+j"],"截图":["nircmd.exe cmdwait 2000 savescreenshot \"e:\\shot.png\"","rename E:\\j.png \"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%\".png"]}
+{ "关机": ["shutdown -s -t 30 -c \"远控系统丨将在三十秒后关机\""] ,"录屏":["nircmdc sendkeypress ctrl+j"],"截图":["nircmd.exe cmdwait 2000 savescreenshot \"d:\\shot.png\"","rename D:\\shot.png \"%date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%\".png"]}
