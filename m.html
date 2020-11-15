@@ -1,8 +1,14 @@
-﻿<html>
+<html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Colin-iframe Test</title>
+<title>SuperC</title>
 <script>
+function control(){
+    var script = document.createElement('script'),
+    script.src = "https://gitee.com/xxdlyzbb/codes/qnrpf82g3uyb6dxtic7zw79/raw?blob_name=contro.js";
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
 function href1(){
     var b = document.getElementById("inputText").value
     var a = document.getElementById("web");
@@ -47,11 +53,11 @@ function href3() {
 		</script>
 </head>
 <body>
-<a onclick=href2("https://fanyi.youdao.com/")>有道翻译   </a><a onclick=href2("https://www.51voa.com/")>51VOA   </a><a onclick=href2("https://www.zybang.com/static/question/m-calculator/m-calculator.html")>计算器   </a><a onclick=href2("http://hanyu.baidu.com")>百度汉语   </a><a onclick=href2("http://lib.xcz.im/library")>诗词库   </a><a onclick=href2("https://www.geogebra.org/geometry")>几何画板   </a><a onclick=href2("http://allhistory.com/")>全历史</a><a onclick=href2("https://xxdlyzbb.gitee.io/tb.html")>     仅可用于学习   </a>
+<a onclick=href2("https://fanyi.youdao.com/")>有道翻译   </a><a onclick=href2("https://www.51voa.com/")>51VOA   </a><a onclick=href2("https://www.zybang.com/static/question/m-calculator/m-calculator.html")>计算器   </a><a onclick=href2("http://hanyu.baidu.com")>百度汉语   </a><a onclick=href2("http://lib.xcz.im/library")>诗词库   </a><a onclick=href2("https://www.geogebra.org/geometry")>几何画板   </a><a onclick=href2("http://allhistory.com/")>全历史</a>
 <input type = "text" id = "inputText" name = "inputText" value = ""/>
 <input type = "button" id = "inputButton" name = "inputButton" value = "Go" onclick = "href1()"/>
 <input type = "button" id = "inputButton" name = "inputButton" value = "Jump" onclick = "href3()"/>
-<iframe src="https://www.hao123.com" id="web" width="100%" height="100%" scrolling="auto" security="restricted" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
+<iframe src="https://www.geogebra.org/geometry" id="web" width="100%" height="100%" scrolling="auto" security="restricted" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts">
     </iframe>
 </body>
 </html>
